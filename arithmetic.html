@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <title>Arithmetic.html</title>
+    <body>
+
+    <h1>Sandhya Nidigonda Computes</h1>
+    <form>
+        <label for="form1_base">Enter a base</label>
+        <input type ="number" id="form1_baseElement" name="form1_base" min=10 max=50 step=2 value=30> <br>
+    
+        <label for="form1_exponent">Enter an Exponent</label>
+        <input type ="number" id="form1_exponentElement" name="form1_exponent" min=2 autofocus> <br>
+    
+        <input type="button" onclick="powers()" value="Compute">
+    </form>
+    
+    <p id="first_result">Results are out</p>
+    
+    <script> 
+    
+    function powers (){
+        
+        baseElement = document.getElementById("form1_baseElement").value
+        exponentElement = document.getElementById("form1_exponentElement").value
+        result=" "
+        out = document.getElementById("first_result")
+        for(var i=1;i<=exponentElement;i++){       
+            result=result+ Math.pow(baseElement,i)+" "
+        }
+        out.innerHTML="Powers of "+baseElement+" are: "+result;
+    }
+    </script>
+    
+    <form>
+        <input type="radio" id="radiobutton_plus" value="plus" onclick="processRadio()" checked >
+        <label for="radiobutton_plus">+</label></br>
+      
+        <input type="radio" id="radiobutton_minus" value="minus" onclick="processRadio()">
+        <label for="radiobutton_minus">-</label></br>
+      
+        <input type="radio" id="radiobutton_multiplication" value="times" onclick="processRadio()">
+        <label for="radiobutton_multiplication">*</label></br>
+    
+        <input type="radio" id="radiobutton_division" value="divide" onclick="processRadio()">
+        <label for="radiobutton_division">/</label></br>
+        
+      </form>
+      <p id=second_results>Results are out</p>
+      <script>
+          function processRadio(){
+             
+              baseElement = document.getElementById("form1_baseElement").value
+              exponentElement = document.getElementById("form1_exponentElement").value
+              out1= document.getElementById("second_results")
+              if(document.getElementById('radiobutton_plus').checked){
+                  out1.innerHTML="result is: "+ (Number(baseElement)+Number(exponentElement))
+              }
+              if(document.getElementById('radiobutton_minus').checked){
+                  out1.innerHTML="result is: "+ (Number(baseElement)-Number(exponentElement))
+              }
+              if(document.getElementById('radiobutton_multiplication').checked){
+                  out1.innerHTML="result is: "+ (Number(baseElement)*Number(exponentElement))
+              }
+              if(document.getElementById('radiobutton_division').checked){
+                  out1.innerHTML="result is: "+ (Number(baseElement)/Number(exponentElement))
+              }
+          }
+      </script>
+    
+    </body>
+    </html>
+    
+    
+    
