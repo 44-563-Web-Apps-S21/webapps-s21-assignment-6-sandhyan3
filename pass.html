@@ -30,7 +30,7 @@ function processPhrase(){
     console.log("Getting form values")
     secretphrase = document.getElementById("form1_secretphrase").value
     phrasecheck = document.getElementById("form1_phrasecheck").value
-    //confirmed = confirm("Are these the values? "+secretphrase+" and "+phrasecheck)
+    
    
     out = document.getElementById("result")
     if(secretphrase == phrasecheck){
@@ -45,5 +45,33 @@ function processPhrase(){
     }
 }
 </script>
+
+<div class="container">
+    <img id ="Narwhal" src="Narwhal.jpg" onclick="newImage()" height="200" weight="200">
+    
+    <script>
+
+        var usingImage=1;
+        function newImage(){
+
+            switch(usingImage){
+                case 1:                        
+                    var x=document.getElementById("Narwhal").src="Narwhal.jpg";                        
+                    usingImage++;
+                    break;
+
+                case 2:
+                    var y=document.getElementById("Narwhal").src="Impala.jpg";
+                    usingImage++;
+                    break;
+
+                case 3:
+                    var z=document.getElementById("Narwhal").src="Deer.jpg";                        
+                    usingImage=1;
+                    break;
+            }
+
+    }
+    </script>
 </body>
 </html>
