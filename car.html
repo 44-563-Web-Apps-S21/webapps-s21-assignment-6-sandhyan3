@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<title>Car.html</title>
+    <body>
+
+    <h1>Sandhya Nidigonda orders a car</h1>
+
+ <form>
+    <label for="checkbox_electric">Electric</label>
+    <input type ="checkbox" id="checkbox_electric" name="checkbox_electric"> <br>
+
+    <label for="checkbox_ac">AC</label>
+    <input type ="checkbox" id="checkbox_ac" name="checkbox_ac" autofocus> <br>
+
+    <label for="checkbox_gps">GPS</label>
+    <input type ="checkbox" id="checkbox_gps" name="checkbox_gps" autofocus> <br>
+
+    <input type="button" onclick="OrderCar()" value="Order a car">
+</form>
+
+
+<p id="car_result1">Results are out for car </p>
+
+<script> 
+var my_car={}
+out= document.getElementById("car_result")
+function OrderCar(){
+    Electric = document.getElementById("checkbox_electric")
+    Ac = document.getElementById("checkbox_ac")
+    Gps = document.getElementById("checkbox_gps")
+
+        my_car = {
+            Electric: false,
+            AC: false,
+            GPS: false
+            };
+        my_car.Electric = Electric.checked
+        my_car.AC = Ac.checked
+        my_car.GPS = Gps.checked
+        out.innerHTML = Object.values(my_car);
+
+}
+</script>
+
+<form>
+    <label for="property_name">Enter a property</label>
+    <input type ="text" id="property_name" name="property_name" value="color"> <br>
+
+    <label for="Property_value">Enter a value</label>
+    <input type ="text" id="Property_value" name="Property_value" autofocus> <br>
+
+    <input type="button" onclick="updateCar()" value="Update the car">
+</form>
+<p id="car_result2">Results </p>
+<script>
+    
+    function updateCar(){
+        my_car.prop= document.getElementById("property_name").value;
+        my_car.valOfProp= document.getElementById("Property_value").value;
+        console.log(my_car)
+        document.getElementById("car_result2").innerHTML = Object.values(my_car);
+    }
+</script>
+</body>
+</html>
